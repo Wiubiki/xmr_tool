@@ -84,7 +84,7 @@ if st.button("Generate XmR"):
     # INTERPRETATION SECTION
     # -----------------------------
     st.subheader("Interpretation")
-    col_left, col_right = st.columns(2)
+    col_left, col_center, col_right = st.columns(3)
 
     # ------------------------------------------------------
     # COLUMN LEFT: WHAT THE CHARTS ARE TELLING US
@@ -169,9 +169,9 @@ if st.button("Generate XmR"):
 
 
     # ------------------------------------------------------
-    # COLUMN RIGHT: HOW TO READ THE X & MR CHARTS
+    # COLUMN CENTER: HOW TO READ THE X & MR CHARTS
     # ------------------------------------------------------
-    with col_right:
+    with col_center:
         st.markdown("### How to read the X chart")
         st.write(
             """
@@ -202,6 +202,25 @@ if st.button("Generate XmR"):
     Unstable MR → the system is rattling before it shifts.
     """
         )
+
+     # ------------------------------------------------------
+    # COLUMN RIGHT: CAUTION ABOUT NUMBER OF DATA POINTS
+    # ------------------------------------------------------
+    with col_right:
+        st.markdown("### How many data points are needed?")
+        st.write(
+            """    More is always better, but XmR does not require a huge dataset. You just need enough history so the control limits aren’t hypersensitive to routine noise. Although there’s no universal rule, we recommend the following guidelines:
+
+
+    1. **Minimum: 8points** - Enough to compute limits, but interpretation is tentative — limits may be unstable.  
+    2. **Acceptable: 12 points** — This is where XmR charts begin behaving reliably; basic signals become meaningful.  
+    3. **Good: 20+ points** — Control limits stabilize, noise becomes predictable, and special-cause signals can be trusted.
+    4. **Ideal: 30+ points** - MR estimates become very solid, and the chart is sensitive enough to detect subtle shifts.
+
+    """
+        )
+
+    
 
 
 
