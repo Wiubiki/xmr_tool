@@ -281,7 +281,7 @@ if st.button("Generate XmR"):
         line_dash="dot",
         line_color="darkgray",
         opacity=0.5,
-        annotation_text=None,
+        annotation_text="midpoint_upper",
     )
 
     fig_x.add_hline(
@@ -289,7 +289,7 @@ if st.button("Generate XmR"):
         line_dash="dot",
         line_color="darkgray",
         opacity=0.5,
-        annotation_text=None,
+        annotation_text="midpoint_lower",
     )
 
     fig_x.update_layout(
@@ -350,7 +350,7 @@ if st.button("Generate XmR"):
         line_dash="dot",
         line_color="darkgray",
         opacity=0.5,
-        annotation_text=None,
+        annotation_text="midpoint",
     )
 
     fig_mr.update_layout(
