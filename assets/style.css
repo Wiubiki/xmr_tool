@@ -1,0 +1,21 @@
+/* Title h1  */
+#xm-r-control-chart-tool {
+    text-align: center;
+}
+
+
+/* 'Generate XmR' Button  */
+
+.st-key-generate-xmr-button button {
+    background-color:#98ece7;
+    border-radius: 8px;
+    border-color: lightseagreen;
+}
+
+.st-key-generate-xmr-button button:hover {
+    background-color: lightseagreen;
+    color:#ffffff;
+}
+
+
+

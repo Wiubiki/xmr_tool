@@ -12,12 +12,24 @@ import pandas as pd
 import numpy as np
 from xmr_core.xmr import compute_xmr
 import plotly.graph_objects as go
+import pathlib
+
+# -------------------------------------------------------------------
+# Function to load CSS from the 'assets' folder
+# -------------------------------------------------------------------
+def load_css(file_path):
+    with open(file_path, "r") as css_file:
+        st.markdown(f'<style>{css_file.read()}</style>', unsafe_allow_html=True)
+
+
+# Load the external CSS
+load_css("./assets/style.css")
 
 st.set_page_config(page_title="XmR Tool", layout="wide")
 st.title("XmR Control Chart Tool")
 
-st.markdown(
-    "Paste values below. Dates are optional. If omitted, points will be numbered."
+st.write('<p style="text-align:center;">Paste values below. Dates are optional. If omitted, points will be numbered.</p>',
+unsafe_allow_html=True
 )
 
 col1, col2 = st.columns(2)
@@ -39,7 +51,7 @@ with col2:
 series_name = st.text_input("Series name", "Metric")
 decimals = st.number_input("Decimal places", 0, 6, 1)
 
-if st.button("Generate XmR"):
+if st.button("Generate XmR", key="generate-xmr-button"):
     try:
         vals = [float(x) for x in raw_values.replace(",", " ").replace(";", " ").split()]
         values = pd.Series(vals)
